@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="tsm:war">
+    <output-path>$PROJECT_DIR$/tsm/target</output-path>
+    <root id="archive" name="FenYe.war">
+      <element id="artifact" artifact-name="tsm:war exploded" />
+    </root>
+  </artifact>
+</component>

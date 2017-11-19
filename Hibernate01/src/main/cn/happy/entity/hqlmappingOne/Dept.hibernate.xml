@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="main.cn.happy.entity.hqlmappingOne">
+    <class name="Dept" table="dept" schema="huohuo01">
+        <id name="deptno" column="deptno">
+            <!-- native   数据库方言的可移植性 -->
+            <generator class="native"/>
+        </id>
+        <property name="deptname"/>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="main.cn.happy.entity.hqlneilianjie">
+    <class name="Dept" table="Dept" schema="huohuo01">
+        <id name="deptno" column="deptno">
+            <generator class="native"></generator>
+        </id>
+        <property name="deptname" />
+      <!--  <property name="deptno" />-->
+        <!--植入一个set标签-->
+        <set name="emps" cascade="save-update" inverse="true" order-by="empname desc">
+            <!--多的一方表的外键列-->
+            <key column="deptno"></key>
+            <one-to-many class="Emp"></one-to-many>
+        </set>
+    </class>
+</hibernate-mapping>

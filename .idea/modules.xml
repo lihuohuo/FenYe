@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Ajax/Ajax.iml" filepath="$PROJECT_DIR$/Ajax/Ajax.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AjaxFenYe/AjaxFenYe.iml" filepath="$PROJECT_DIR$/AjaxFenYe/AjaxFenYe.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Blog/Blog.iml" filepath="$PROJECT_DIR$/Blog/Blog.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BlogHtTemplatemaster/BlogHtTemplatemaster.iml" filepath="$PROJECT_DIR$/BlogHtTemplatemaster/BlogHtTemplatemaster.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DriversSchool/DriversSchool.iml" filepath="$PROJECT_DIR$/DriversSchool/DriversSchool.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DubboClient/DubboClient.iml" filepath="$PROJECT_DIR$/DubboClient/DubboClient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DubboService/DubboService.iml" filepath="$PROJECT_DIR$/DubboService/DubboService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FAQManagement/FAQManagement.iml" filepath="$PROJECT_DIR$/FAQManagement/FAQManagement.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FenYe.iml" filepath="$PROJECT_DIR$/FenYe.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Hibernate01/Hibernate01.iml" filepath="$PROJECT_DIR$/Hibernate01/Hibernate01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MyBatic/MyBatic.iml" filepath="$PROJECT_DIR$/MyBatic/MyBatic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Proxy01shili/Proxy01shili.iml" filepath="$PROJECT_DIR$/Proxy01shili/Proxy01shili.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SSH/SSH.iml" filepath="$PROJECT_DIR$/SSH/SSH.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SSH01/SSH01.iml" filepath="$PROJECT_DIR$/SSH01/SSH01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SSHAnnotation/SSHAnnotation.iml" filepath="$PROJECT_DIR$/SSHAnnotation/SSHAnnotation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SSHXml/SSHXml.iml" filepath="$PROJECT_DIR$/SSHXml/SSHXml.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring01/Spring01.iml" filepath="$PROJECT_DIR$/Spring01/Spring01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringBoot01/SpringBoot01.iml" filepath="$PROJECT_DIR$/SpringBoot01/SpringBoot01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringMvc/SpringMvc.iml" filepath="$PROJECT_DIR$/SpringMvc/SpringMvc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringSecurity/SpringSecurity.iml" filepath="$PROJECT_DIR$/SpringSecurity/SpringSecurity.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Struts2/Struts2.iml" filepath="$PROJECT_DIR$/Struts2/Struts2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Struts2FileUpload/Struts2FileUpload.iml" filepath="$PROJECT_DIR$/Struts2FileUpload/Struts2FileUpload.iml" />
+      <module fileurl="file://$PROJECT_DIR$/StrutsDemo/StrutsDemo.iml" filepath="$PROJECT_DIR$/StrutsDemo/StrutsDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Work01/Work01.iml" filepath="$PROJECT_DIR$/Work01/Work01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/exam/exam.iml" filepath="$PROJECT_DIR$/exam/exam.iml" />
+      <module fileurl="file://$PROJECT_DIR$/exam_tijian/exam_tijian.iml" filepath="$PROJECT_DIR$/exam_tijian/exam_tijian.iml" />
+      <module fileurl="file://$PROJECT_DIR$/smbms/smbms.iml" filepath="$PROJECT_DIR$/smbms/smbms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/smbmsssm/smbmsssm.iml" filepath="$PROJECT_DIR$/smbmsssm/smbmsssm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tms/tms.iml" filepath="$PROJECT_DIR$/tms/tms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tsm/tsm.iml" filepath="$PROJECT_DIR$/tsm/tsm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/work/work.iml" filepath="$PROJECT_DIR$/work/work.iml" />
+    </modules>
+  </component>
+</project>

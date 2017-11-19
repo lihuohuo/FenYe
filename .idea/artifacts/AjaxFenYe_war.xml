@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="AjaxFenYe:war">
+    <output-path>$PROJECT_DIR$/AjaxFenYe/target</output-path>
+    <root id="archive" name="FenYe.war">
+      <element id="artifact" artifact-name="AjaxFenYe:war exploded" />
+    </root>
+  </artifact>
+</component>

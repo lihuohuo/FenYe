@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Proxy01shili:war">
+    <output-path>$PROJECT_DIR$/Proxy01shili/target</output-path>
+    <root id="archive" name="Proxy01shili.war">
+      <element id="artifact" artifact-name="Proxy01shili:war exploded" />
+    </root>
+  </artifact>
+</component>

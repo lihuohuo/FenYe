@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    <constant name="struts.devMode" value="true"></constant>
+    <package name="day05" namespace="/" extends="struts-default">
+        <!--
+          *_*  第一个个星  Action类的名称  第二个星    类中方法名称
+          {1}将第一个*号对应的真实问题替换到该处
+          {2}将第一个*号对应的真实问题替换到该处
+
+        -->
+       <action name="*_*" class="cn.happy.day05pattern.{1}" method="{2}">
+            <result name="{2}">/day05/{1}/{2}.jsp</result>
+           <result name="success">/day05/{1}/success.jsp</result>
+       </action>
+    </package>
+</struts>

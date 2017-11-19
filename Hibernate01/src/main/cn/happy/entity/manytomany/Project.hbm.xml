@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="main.cn.happy.entity.manytomany">
+    <class name="Project" table="Project" schema="huohuo01">
+        <id name="proid" column="proid">
+           <generator class="native"></generator>
+        </id>
+        <property name="proname" />
+        <!--table指的是中间表-->
+        <set name="employees" table="PROEMP" cascade="save-update" inverse="true">
+            <key column="RPROID"></key>
+            <many-to-many column="REMPID" class="Employee"></many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>

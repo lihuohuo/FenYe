@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="main.cn.happy.entity.LazyAndLoad">
+    <class name="main.cn.happy.entity.LazyAndLoad.entity.StudentNew" table="StudentNew" schema="huohuo01" lazy="true">
+        <id name="stuno" column="stuno">
+            <generator class="native"></generator>
+        </id>
+        <property name="stuname" />
+        <!--植入一个set标签-->
+      <!--  <set name="emps" cascade="save-update" inverse="true" order-by="empname desc">
+            &lt;!&ndash;多的一方表的外键列&ndash;&gt;
+            <key column="deptno"></key>
+            <one-to-many class="Emp"></one-to-many>
+        </set>-->
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD
+ Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.happy.dao.IUserDao">
+
+
+    <!--resultMap-->
+<resultMap id="UserResultMap" type="UserInfo">
+<id property="id" column="id"></id>
+    <result property="name"  column="name"></result>
+</resultMap>
+
+
+
+    <!--01.????-->
+    <select id="getAllList"  resultType="UserInfo">
+    select * from department
+</select>
+    <!--01.?????-->
+<select id="getIdList" parameterType="int" resultType="UserInfo">
+    SELECT * from department WHERE id =#{id}
+</select>
+    <!--01.????? ??resultMap??-->
+    <select id="getgetDeptResultMapById" parameterType="int" resultMap="UserResultMap">
+        SELECT  * FROM department WHERE  id=#{id}
+    </select>
+
+<!--02. ??-->
+  <insert id="addlist" parameterType="UserInfo">
+      INSERT  into department(name) VALUES (#{name})
+  </insert>
+
+    <!--03. ??-->
+    <update id="modify" parameterType="UserInfo">
+  UPDATE department SET  NAME =#{name } WHERE id=#{id}
+    </update>
+
+<!--04. shanchu-->
+    <delete id="deleteUser" parameterType="int">
+        delete from department where  id = #{id}
+    </delete>
+
+    <!--if??-->
+    <select id="ifselectList"  resultType="UserInfo">
+        select * from department where 1=1
+   <if test = "name!=null">
+      and name=#{name}
+   </if>
+    </select>
+
+
+    <!--where ??-->
+    <select id="whereselectList"  resultType="UserInfo">
+        select * from department
+        <where>
+
+            <if test = "name!=null">
+                and name=#{name}
+            </if>
+
+        </where>
+
+    </select>
+    <!--if trim-->
+    <select id="trimselectList"  resultType="UserInfo">
+        select * from department
+        <trim prefix="where" prefixOverrides="and | or">
+            <if test = "name!=null">
+                and name=#{name}
+            </if>
+        </trim>
+    </select>
+
+    <!--?set????-->
+
+    <update id="setmodify" parameterType="UserInfo">
+        UPDATE department
+        <set>
+            <if test = "name!=null">
+              name=#{name}
+            </if>
+        </set>
+      WHERE id=#{id}
+    </update>
+    <!--??if+trim????-->
+    <update id="iftrimmodify" parameterType="UserInfo">
+        UPDATE department
+        <trim prefix="set" suffixOverrides="," suffix="where id=#{id}">
+
+            <if test = "name!=null">
+                name=#{name}
+            </if>
+        </trim>
+    </update>
+
+    <!--   For Eachs-->
+
+   <select id="ForEachs" resultType="UserInfo">
+        SELECT * FROM department WHERE NAME in
+        <foreach collection="array" item="names"
+                 open="(" separator="," close=") ">
+                #{names}
+        </foreach>
+
+   </select>
+
+<!-- ForEaches   List-->
+
+    <select id="ForEachsList" resultType="UserInfo">
+        SELECT * FROM department WHERE NAME in
+        <foreach collection="list" item="roleList"
+                 open="(" separator="," close=") ">
+            #{roleList}
+        </foreach>
+
+    </select>
+
+
+</mapper>
+

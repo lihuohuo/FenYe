@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    <constant name="struts.devMode" value="true"></constant>
+    <include file="struts.day03.xml"></include>
+    <include file="struts.day04.xml"></include>
+    <include file="struts-day05.xml"></include>
+    <include file="struts-day06.xml"></include>
+    <include file="struts-day07.xml"></include>
+    <package name="default" namespace="/" extends="struts-default">
+        <!--  <action name="userAction" class="cn.happy.action.UserAction">
+              <result name="success">/success.jsp</result>
+              <result name="input">/login.jsp</result>
+          </action>-->
+
+
+        <interceptors>
+            <interceptor name="myInter" class="cn.happy.day07interceptor.interceptor.MyTimerInterceptor"></interceptor>
+
+           <!-- 拦截器栈-->
+            <interceptor-stack name="myStack">
+                <interceptor-ref name="defaultStack"></interceptor-ref>
+                <interceptor-ref name="myInter"></interceptor-ref>
+            </interceptor-stack>
+        </interceptors>
+
+        <default-interceptor-ref name="myStack"></default-interceptor-ref>
+
+        <!--<global-results>
+           <result name="login">/WEB-INF/myinter/login.jsp</result>
+       </global-results>-->
+
+        <action name="loginAction" class="cn.happy.day02ServletApi.LoginAction">
+            <result name="success">/day02/success.jsp</result>
+            <!-- <result name="input">/login.jsp</result>-->
+        </action>
+    </package>
+
+</struts>

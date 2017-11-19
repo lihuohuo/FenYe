@@ -1,0 +1,63 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+
+
+
+    <!--手工指定知己的spring文件的位置-->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:applicationContextStudentExam.xml</param-value>
+    </context-param>
+    <!--监听器 listener-->
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
+<!--  &lt;!&ndash; spring mvc  核心控制器 DisPatcherServlet&ndash;&gt;
+<servlet>
+    <servlet-name>springmvc</servlet-name>
+    <servlet-class>
+        DisPatchS
+    </servlet-class>
+    <
+</servlet>-->
+
+
+
+    <servlet>
+        <servlet-name>BookServlet</servlet-name>
+        <servlet-class>cn.happy.Spring21AndMybatis.servlet.BookServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>cn.happy.StudentExam.servlet.LoginServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>GradeServlet</servlet-name>
+        <servlet-class>cn.happy.StudentExam.servlet.GradeServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>GradeServlet</servlet-name>
+        <url-pattern>/GradeServlet</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+
+
+
+    <servlet-mapping>
+        <servlet-name>BookServlet</servlet-name>
+        <url-pattern>/BookServlet</url-pattern>
+    </servlet-mapping>
+</web-app>

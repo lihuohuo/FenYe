@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD
+ Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.happy.dao.StudentDao">
+
+
+    <select id="findStudent" resultType="Student">
+ select * from student where stuname like '%' #{stuname} '%' and stuage>#{stuage}
+</select>
+<select id="findStudentParameter" resultType="Student">
+    select * from student where stuname like '%' #{0} '%' and stuage>#{1}
+</select>
+
+<select id="findByIf" resultType="Student">
+ select * from student
+ <where>
+     <if test="stuname!=null">
+         and stuname like '%' #{stuname} '%'
+     </if>
+     <if test="stuage != null">
+         and stuage>#{stuage}
+     </if>
+ </where>
+</select>
+    <select id="findByChoose" resultType="Student">
+        select * from student
+        <where>
+            <choose>
+                <when test="stuname!=null">
+                    and stuname like '%' #{stuname} '%'
+                </when>
+                <when test="stuage!=null">
+                    and stuage>#{stuage}
+                </when>
+                <otherwise>
+                    and 1=1
+                </otherwise>
+            </choose>
+        </where>
+
+
+    </select>
+
+</mapper>

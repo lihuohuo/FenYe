@@ -1,0 +1,28 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="BlogHtTemplatemaster:war exploded">
+    <output-path>$PROJECT_DIR$/BlogHtTemplatemaster/target/FenYe</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="BlogHtTemplatemaster" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: org.mybatis:mybatis:3.2.2" />
+          <element id="library" level="project" name="Maven: cglib:cglib:3.2.2" />
+          <element id="library" level="project" name="Maven: org.ow2.asm:asm:5.0.4" />
+          <element id="library" level="project" name="Maven: org.apache.ant:ant:1.9.6" />
+          <element id="library" level="project" name="Maven: org.apache.ant:ant-launcher:1.9.6" />
+          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.31" />
+          <element id="library" level="project" name="Maven: jstl:jstl:1.2" />
+          <element id="library" level="project" name="Maven: com.alibaba:fastjson:1.2.34" />
+          <element id="library" level="project" name="Maven: javaee:javaee-api:5" />
+          <element id="library" level="project" name="Maven: javax.servlet:jstl:1.1.2" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/BlogHtTemplatemaster/target/FenYe/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="BlogHtTemplatemaster/web/Web" />
+    </root>
+  </artifact>
+</component>

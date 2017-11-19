@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--bean write  here-->
+    <!--配置业务bean-->
+    <bean id="car" class="cn.happy.Spring05DIXml.Car">
+        <property name="brand" value="兰博基尼"></property>
+        <property name="color" value="粉色"></property>
+    </bean>
+<!-- 构造注入-->
+    <bean id="stu" class="cn.happy.Spring05DIXml.Student">
+        <constructor-arg name="name" value="李冰"></constructor-arg>
+        <constructor-arg index="1" value="15"></constructor-arg>
+        <constructor-arg index="2" ref="car"></constructor-arg>
+
+    </bean>
+
+    <bean id="stu2" class="cn.happy.Spring05DIXml.Student" p:name="122" p:age="55" p:car-ref="car"></bean>
+</beans>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD
+ Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.happy.Spring21AndMybatis.dao.IBookDAO">
+
+
+  <!--????-->
+    <insert id="addBook">
+      INSERT  into book2(bookname,bookprice) VALUES (#{bookname},#{bookprice})
+  </insert>
+
+    <!--
+        &lt;!&ndash;03. ??&ndash;&gt;
+        <update id="modify" parameterType="UserInfo">
+      UPDATE department SET  NAME =#{name } WHERE id=#{id}
+        </update>
+
+    &lt;!&ndash;04. shanchu&ndash;&gt;
+        <delete id="deleteUser" parameterType="int">
+            delete from department where  id = #{id}
+        </delete>
+
+    -->
+
+</mapper>
+

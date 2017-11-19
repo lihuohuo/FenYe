@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:cotext="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+      http://www.springframework.org/schema/context
+      http://www.springframework.org/schema/context/spring-context.xsd
+      http://www.springframework.org/schema/mvc
+      http://www.springframework.org/schema/mvc/spring-mvc.xsd
+"
+>
+
+    <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="mappings">
+           <props>
+               <prop key="/hello.do">multiActions</prop>
+           </props>
+        </property>
+    </bean>
+
+
+    <!--属性方法名称 解析器-->
+    <bean id="propertiesMethodResolver" class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+        <property name="mappings">
+            <props>
+                <prop key="/first.do">insert</prop>
+                <prop key="/second.do">delete</prop>
+            </props>
+        </property>
+    </bean>
+    <!--参数方法名称解析器-->
+    <bean id="paramMethodResolver" class="org.springframework.web.servlet.mvc.multiaction.ParameterMethodNameResolver">
+        <property name="paramName" value="actionName"></property>
+    </bean>
+
+    <!--引入视图 -->
+<bean class="org.springframework.web.servlet.view.XmlViewResolver">
+    <property name="location" value="classpath:myView.xml"></property>
+</bean>
+    <!--视图解析器-->
+    <bean  class="org.springframework.web.servlet.view.BeanNameViewResolver"></bean>
+
+    <!-- 默认  视图解析器-->
+   <!-- <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>-->
+    <!--注册Hanlder  处理器-->
+    <bean id="multiActions" class="cn.happy.Myjd">
+    <property name="methodNameResolver" ref="paramMethodResolver"></property>
+    </bean>
+</beans>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.happy.dao.IDeptDAO">
+    <resultMap id="DeptMapperMultipleSQL" type="Dept">
+        <id column="deptid" property="deptid"></id>
+        <result column="deptName" property="deptName"></result>
+        <collection property="emps" ofType="Emp" select="selectEmpsById" column="deptid">
+        </collection>
+
+    </resultMap>
+    <select id="selectEmpsById" resultType="Emp">
+        select * from  employee where deptid=#{deptid}
+    </select>
+    <!--一对多的单条SQL解决方案-->
+    <select id="findEmpsByDeptNoMultipleSQL" resultMap="DeptMapperMultipleSQL">
+        select deptName,deptid
+        from department
+        where deptid=#{deptid}
+    </select>
+
+    <resultMap id="DeptMapper" type="Dept">
+        <id column="deptid" property="deptid"></id>
+        <result column="deptName" property="deptName"></result>
+        <!--
+           ofType:集合中单个元素的类型
+        -->
+        <collection property="emps" ofType="Emp">
+            <id  column="empid" property="empid"></id>
+            <result column="empName" property="empName"></result>
+        </collection>
+    </resultMap>
+    <select id="findEmpsByDeptNo" resultMap="DeptMapper">
+        select empid,empName,deptName,department.deptid
+        from employee,department
+        where employee.deptid=department.deptid
+        and department.deptid=#{deptid}
+    </select>
+    <!--开启二级缓存的第二步-->
+    <!--
+      eviction：从缓存中剔除对象的策略
+      flushInterval:缓存的时间 （原因）
+        绝对过期：
+        滑动过期：
+        readOnly:能否修改缓存中对象
+        size:缓存中最多保存多少个的对象
+
+    -->
+    <cache eviction="FIFO" flushInterval="100000" readOnly="true" size="1024"></cache>
+    <!--添加部门  逻辑上都返回int-->
+    <insert id="addDept" parameterType="Dept">
+        insert into department(deptName) VALUES (#{deptName})
+        <selectKey keyProperty="deptid" resultType="int">
+            select @@IDENTITY
+        </selectKey>
+    </insert>
+    <!--resultMap-->
+    <resultMap id="deptResultMap" type="Dept">
+        <id property="deptid" column="deptid"></id>
+        <result property="deptName" column="deptName"></result>
+    </resultMap>
+
+    <!--01.查询所有-->
+    <select id="getAllList" resultType="Dept">
+        select * from department
+    </select>
+    <!--01.带条件查询-->
+    <select id="getDeptById" parameterType="int" resultType="Dept" useCache="false">
+      select * from department WHERE deptid=#{deptid}
+  </select>
+
+    <!--01.带条件查询 使用resultMap返回-->
+    <select id="getDeptResultMapById" parameterType="int" resultMap="deptResultMap">
+        select * from department WHERE deptid=#{deptid}
+    </select>
+    <!--02.删除部门，根据编号-->
+    <delete id="delDept">
+        DELETE  from department where deptid=#{deptid}
+    </delete>
+    <!--03.修改指定部门的信息-->
+    <delete id="updateDept">
+        UPDATE   department set deptName=#{deptName} where deptid=#{deptid}
+    </delete>
+</mapper>

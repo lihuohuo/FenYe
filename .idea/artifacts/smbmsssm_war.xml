@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="smbmsssm:war">
+    <output-path>$PROJECT_DIR$/smbmsssm/target</output-path>
+    <root id="archive" name="FenYe.war">
+      <element id="artifact" artifact-name="smbmsssm:war exploded" />
+    </root>
+  </artifact>
+</component>

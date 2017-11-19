@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    <constant name="struts.devMode" value="true"></constant>
+    <package name="day03" namespace="/" extends="struts-default">
+        <!--list-->
+        <action name="firstList" class="cn.happy.day03manymethod.FirstAction" method="list">
+            <result name="list">/day03/list.jsp</result>
+        </action>
+        <!--del-->
+        <action name="firstDel" class="cn.happy.day03manymethod.FirstAction" method="del">
+            <result name="del">/day03/del.jsp</result>
+        </action>
+    </package>
+    <include file="struts.day03.xml"></include>
+</struts>

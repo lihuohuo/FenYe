@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.tms.dao.IContentDAO">
+    <!--1.获取所有内容集合-->
+    <select id="getAllContent" resultType="Content">
+     select * from cm_column
+ </select>
+
+    <select id="getAllNews" resultType="News">
+        select * from news where columnname=#{columnname}
+    </select>
+
+    <select id="getAllStatus" resultType="Status">
+        select * from status
+    </select>
+
+    <select id="selectAllnews" resultType="News">
+        select * from news where 1=1
+        and columnname=#{columnname}
+        <if test="status!=0||status!=null">
+            and status=#{status}
+        </if>
+        <if test="title!=null||title!=''">
+            and title like concat('%',#{title},'%')
+        </if>
+    </select>
+    <insert id="addnews">
+     insert into news (columnname,title,updatetime,tag,abstras,userid,conents) values (#{columnname},#{title},NOW(),#{tag},#{abstras},#{userid},#{conents});
+    </insert>
+</mapper>

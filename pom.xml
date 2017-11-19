@@ -1,0 +1,84 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>cn.huohuo</groupId>
+    <artifactId>FenYe</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>MyBatic</module>
+   <!--     <module>01MyBatis</module>
+        <module>01MyBatis</module>-->
+        <module>Blog</module>
+        <module>Blog</module>
+        <module>BlogHtTemplatemaster</module>
+        <module>smbms</module>
+        <module>Ajax</module>
+        <module>Ajax</module>
+        <module>AjaxFenYe</module>
+        <module>Spring01</module>
+        <module>Proxy01shili</module>
+        <module>SpringMvc</module>
+        <module>DubboService</module>
+        <module>DubboClient</module>
+        <module>smbmsssm</module>
+        <module>FAQManagement</module>
+        <module>work</module>
+        <module>Work01</module>
+        <module>Hibernate01</module>
+        <module>SpringBoot01</module>
+        <module>tms</module>
+        <module>SSH</module>
+        <module>SSH01</module>
+        <module>DriversSchool</module>
+        <module>exam</module>
+        <module>exam</module>
+        <module>exam_tijian</module>
+        <module>StrusDemo</module>
+        <module>StrutsDemo</module>
+        <module>StrutsDemo</module>
+        <module>Struts2</module>
+        <module>tsm</module>
+        <module>SSHXml</module>
+        <module>SSHAnnotation</module>
+        <module>Struts2FileUpload</module>
+        <module>SpringSecurity</module>
+    </modules>
+    <name>FenYe Maven Webapp</name>
+    <url>http://maven.apache.org</url>
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>javaee</groupId>
+            <artifactId>javaee-api</artifactId>
+            <version>5</version>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.31</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.1.2</version>
+        </dependency>
+
+
+
+
+    </dependencies>
+    <build>
+        <finalName>FenYe</finalName>
+    </build>
+</project>

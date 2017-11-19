@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="someService" class="cn.happy.Spring12Aop.SomeService"></bean>
+
+<bean id="beforeAdvice" class="cn.happy.Spring12Aop.MyBeforeAdvice"></bean>
+
+    <!--增强： 顾问-->
+    <bean id="beforeAdvisor" class="org.springframework.aop.support.NameMatchMethodPointcutAdvisor">
+       <property name="advice" ref="beforeAdvice"></property>
+       <property name="mappedNames" value="say1"></property>
+   </bean>
+
+
+    <bean id="someProxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target" ref="someService"></property>
+        <property name="interceptorNames" value="beforeAdvisor"></property>
+    </bean>
+
+</beans>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="Ajax" />
+        <module name="AjaxFenYe" />
+        <module name="Blog" />
+        <module name="BlogHtTemplatemaster" />
+        <module name="DriversSchool" />
+        <module name="DubboClient" />
+        <module name="DubboService" />
+        <module name="exam" />
+        <module name="exam_tijian" />
+        <module name="FAQManagement" />
+        <module name="Hibernate01" />
+        <module name="MyBatic" />
+        <module name="Proxy01shili" />
+        <module name="smbms" />
+        <module name="smbmsssm" />
+        <module name="Spring01" />
+        <module name="SpringBoot01" />
+        <module name="SpringMvc" />
+        <module name="SpringSecurity" />
+        <module name="SSH" />
+        <module name="SSH01" />
+        <module name="SSHAnnotation" />
+        <module name="SSHXml" />
+        <module name="Struts2" />
+        <module name="Struts2FileUpload" />
+        <module name="StrutsDemo" />
+        <module name="tms" />
+        <module name="tsm" />
+        <module name="work" />
+        <module name="Work01" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Ajax" target="1.5" />
+      <module name="AjaxFenYe" target="1.5" />
+      <module name="Blog" target="1.5" />
+      <module name="BlogHtTemplatemaster" target="1.5" />
+      <module name="DriversSchool" target="1.5" />
+      <module name="DubboClient" target="1.5" />
+      <module name="DubboService" target="1.5" />
+      <module name="exam" target="1.5" />
+      <module name="exam_tijian" target="1.5" />
+      <module name="FAQManagement" target="1.5" />
+      <module name="FenYe" target="1.5" />
+      <module name="Hibernate01" target="1.5" />
+      <module name="MyBatic" target="1.5" />
+      <module name="Proxy01shili" target="1.5" />
+      <module name="smbms" target="1.5" />
+      <module name="smbmsssm" target="1.5" />
+      <module name="Spring01" target="1.5" />
+      <module name="SpringBoot01" target="1.8" />
+      <module name="SpringMvc" target="1.5" />
+      <module name="SpringSecurity" target="1.5" />
+      <module name="SSH" target="1.5" />
+      <module name="SSH01" target="1.5" />
+      <module name="SSHAnnotation" target="1.5" />
+      <module name="SSHXml" target="1.5" />
+      <module name="StrusDemo" target="1.5" />
+      <module name="Struts2" target="1.5" />
+      <module name="Struts2FileUpload" target="1.5" />
+      <module name="StrutsDemo" target="1.5" />
+      <module name="tms" target="1.5" />
+      <module name="tsm" target="1.5" />
+      <module name="work" target="1.5" />
+      <module name="Work01" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

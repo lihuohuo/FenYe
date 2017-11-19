@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="SSHAnnotation:war">
+    <output-path>$PROJECT_DIR$/SSHAnnotation/target</output-path>
+    <root id="archive" name="FenYe.war">
+      <element id="artifact" artifact-name="SSHAnnotation:war exploded" />
+    </root>
+  </artifact>
+</component>

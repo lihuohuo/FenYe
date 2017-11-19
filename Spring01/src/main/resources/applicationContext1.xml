@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+         http://www.springframework.org/schema/context  http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <!--第0步：让程序识别到jdbc.properties文件-->
+    <context:property-placeholder location="classpath:jdbc.properties"></context:property-placeholder>
+
+    <!--第一步：1.1数据源-->
+    <!--Spring内置的数据源-->
+    <!--02.阿里巴巴-->
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="driverClassName" value="${jdbc.driverClassName}"></property>
+        <property name="url" value="${jdbc.url}"></property>
+        <property name="username" value="${jdbc.user}"></property>
+        <property name="password" value="${jdbc.password}"></property>
+    </bean>
+   <!-- <3.工厂SqlSessionFactoryBean>-->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"></property>
+        <property name="configLocation" value="classpath:MyBatis-config.xml"></property>
+    </bean>
+
+    <!--<4.DAO>-->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="cn.happy.dao"></property>
+    </bean>
+
+    <!--<5.client>-->
+    <bean id="userInfoService" class="cn.happy.stuManager.service.UserInfoServiceImpl">
+        <property name="dao" ref="IUserInfoDAO"></property>
+    </bean>
+
+    <!--<5.client>-->
+    <bean id="gradeService" class="cn.happy.stuManager.service.GradeServiceImpl">
+        <property name="dao" ref="IGradeDAO"></property>
+    </bean>
+
+
+    <!--事务管理器  被别人引用   -->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>
+
+
+    <!--AspectJ AOP-->
+    <!--之前的advice 一个bean  实现了一个特定接口-->
+    <tx:advice id="txAdvice" transaction-manager="transactionManager">
+        <tx:attributes>
+            <tx:method name="buy*" isolation="DEFAULT" propagation="REQUIRED" rollback-for="StockException"/>
+        </tx:attributes>
+    </tx:advice>
+    <aop:config>
+        <!--切点-->
+            <aop:pointcut id="mypoint" expression="execution(* *..service.*.*(..))"/>
+         <!--顾问-->
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="mypoint"></aop:advisor>
+    </aop:config>
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

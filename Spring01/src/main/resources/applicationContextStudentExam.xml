@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd
+       http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd
+http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+<!--
+    <context:property-placeholder location="jdbc.properties"></context:property-placeholder>-->
+
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+        <property name="url" value="jdbc:mysql://localhost:3306/studentexam?characterEncoding=UTF-8"></property>
+        <property name="username" value="root"></property>
+        <property name="password" value=""></property>
+    </bean>
+
+
+    <!-- 01   工厂 SqlSessionFactory -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"></property>
+        <property name="configLocation" value="classpath:MyBatis-config.xml"></property>
+    </bean>
+
+    <!--02   DAO-->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="cn.happy.StudentExam.dao"></property>
+        <!--   可以省略-->
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
+    </bean>
+    <!-- 03    client-->
+    <bean id="teacherService" class="cn.happy.StudentExam.service.TeacherServiceImpl">
+        <property name="dao" ref="ILoginDAO"></property>
+    </bean>
+
+<bean id="gradeService" class="cn.happy.StudentExam.service.GradeServiceImpl">
+    <property name="dao" ref="IGradeDAO"></property>
+</bean>
+   <!-- <bean id="accountDao" class="cn.happy.Spring18.cn.happy.dao.AccountDaoImpl">
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>
+
+    <bean id="stockdao" class="cn.happy.Spring18.cn.happy.dao.StockDaoImpl">
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>
+
+    <bean id="accountService" class="cn.happy.Spring18.cn.happy.client.AccountServiceImpl">
+        <property name="accountdao" ref="accountDao"></property>
+        <property name="stockDao" ref="stockdao"></property>
+    </bean>
+-->
+
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager" >
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>
+
+
+   <!-- &lt;!&ndash;扫描 &ndash;&gt;
+    &lt;!&ndash;<tx:annotation-driven transaction-manager="transactionManager"></tx:annotation-driven>&ndash;&gt;
+    <tx:advice id="txAdvice" transaction-manager="transactionManager">
+        <tx:attributes>
+            <tx:method name="buy*" isolation="DEFAULT" propagation="REQUIRED" no-rollback-for="StockExecption"/>
+        </tx:attributes>
+    </tx:advice>
+
+    <aop:config>
+        &lt;!&ndash;切点&ndash;&gt;
+        <aop:pointcut id="mypoint" expression="execution(* *..sevice.*.*(..))"/>
+        &lt;!&ndash;顾问&ndash;&gt;
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="mypoint"></aop:advisor>
+    </aop:config>-->
+
+</beans>

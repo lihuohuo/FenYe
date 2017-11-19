@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--bean write  here-->
+    <!--配置业务bean-->
+
+
+    <!--06   array -->
+    <bean id="array" class="cn.happy.Spring05DIXml.MyCollection">
+        <property name="names">
+            <array>
+                <value>篮球</value>
+                <value>足球</value>
+                <value>各种球</value>
+            </array>
+        </property>
+    </bean>
+
+    <!--06 list-->
+    <bean id="list" class="cn.happy.Spring05DIXml.MyCollection">
+        <property name="list">
+            <list>
+                <value>库里</value>
+                <value>詹姆斯</value>
+                <value>科比</value>
+            </list>
+        </property>
+    </bean>
+    <!--  set-->
+    <bean id="set" class="cn.happy.Spring05DIXml.MyCollection">
+        <property name="set">
+            <set>
+                <value>库里</value>
+                <value>詹姆斯</value>
+                <value>科比</value>
+            </set>
+        </property>
+    </bean>
+
+    <!--  Map-->
+    <bean id="map" class="cn.happy.Spring05DIXml.MyCollection">
+        <property name="map">
+            <map>
+                <entry key="01">
+                    <value>库里</value>
+                </entry>
+                <entry key="02">
+                    <value>詹姆斯</value>
+                </entry>
+                <entry key="03" value=" 科比"></entry>
+            </map>
+        </property>
+    </bean>
+
+    <!-- Properties -->
+
+    <!--  Map-->
+    <bean id="properties" class="cn.happy.Spring05DIXml.MyCollection">
+        <property name="properties">
+            <props>
+                <prop key="01">
+                    库里
+                </prop>
+
+                <prop key="02">
+                    詹姆斯
+                </prop>
+
+                <prop key="03">
+                    科比
+                </prop>
+            </props>
+        </property>
+    </bean>
+</beans>
